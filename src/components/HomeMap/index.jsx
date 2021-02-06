@@ -13,7 +13,7 @@ export default HomeMap;
 
 const styles = StyleSheet.create({
     container: {
-        height: 300,
+        height: "42%",
         backgroundColor:  "#a0abff",
         justifyContent: "center",
         alignItems: "center",
