@@ -27,7 +27,7 @@ const HomeSearch = () => {
                 <View style={styles.iconContainer}>
                     <AntDesign name="clockcircle" size={20} color={Colors.background} />
                 </View>
-                <Text style={styles.destinationText}>IBD Royal City, Jabalpur</Text>
+                <Text style={styles.destinationText}>Outer Ring Road, Bengaluru</Text>
             </View>
 
             <View style={styles.row}>

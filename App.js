@@ -9,12 +9,14 @@
 import React from "react";
 import { StatusBar } from "react-native";
 import HomeScreen from "./src/screens/HomeScreen";
+// import DestinationScreen from "./src/screens/DestinationScreen";
 
 const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <HomeScreen />
+      {/* <DestinationScreen /> */}
     </>
   );
 };

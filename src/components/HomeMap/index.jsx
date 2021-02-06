@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 const HomeMap = () => {
     return (
         <View style={styles.container}>
-            <Text>Im a map</Text>
+            <Text style={{ fontSize: 30 }}>I'm a Map</Text>
         </View>
     )
 };
