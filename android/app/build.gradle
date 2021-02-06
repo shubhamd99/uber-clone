@@ -200,6 +200,14 @@ dependencies {
         exclude group:'com.facebook.flipper'
     }
 
+    // If you do not have project-wide properties defined and have a different play-services version than the one included in this library, use the following instead (switch 17.0.0 and/or 17.2.1 for the desired versions):
+    // implementation(project(':react-native-maps')){
+    //    exclude group: 'com.google.android.gms', module: 'play-services-base'
+    //    exclude group: 'com.google.android.gms', module: 'play-services-maps'
+    // }
+    // implementation 'com.google.android.gms:play-services-base:17.2.1'
+    // implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")
