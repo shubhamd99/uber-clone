@@ -5,6 +5,8 @@
 1. Android - yarn android
 2. IOS - yarn ios
 
+* Shapes in React Native - https://codedaily.io/tutorials/22/The-Shapes-of-React-Native
+
 * Install `react-native-vector-icons`:
 
 1. yarn add react-native-vector-icons
