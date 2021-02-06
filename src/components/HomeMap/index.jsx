@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const HomeMap = () => {
+const HomeMap = (props) => {
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { height: props.height || "42%" }]}>
             <Text style={{ fontSize: 30 }}>I'm a Map</Text>
         </View>
     )
