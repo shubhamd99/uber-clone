@@ -13,6 +13,10 @@ import TripsScreen from "./src/screens/TripsScreen";
 import DestinationScreen from "./src/screens/DestinationScreen";
 import Geolocation from "@react-native-community/geolocation";
 
+// If you need to have geolocation API aligned with the browser (cross-platform apps),
+// or want to support backward compatibility
+navigator.geolocation = require('@react-native-community/geolocation');
+
 const App = () => {
 
   const requestLocationPermission = async () => {
