@@ -3,6 +3,7 @@ import Colors from "../../constants/Colors";
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         paddingTop: 10,
     },
     flexCenter: {
@@ -96,6 +97,11 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         alignItems: "center",
         justifyContent: "center"
+    },
+    bottomContainer: {
+        height: 140,
+        backgroundColor: Colors.white,
+        paddingBottom: 15,
     }
 });
 

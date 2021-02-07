@@ -1,21 +1,28 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
-const HomeMap = (props) => {
+const HomeMap = () => {
     return (
-        <View style={[styles.container, { height: props.height || "42%" }]}>
-            <Text style={{ fontSize: 30 }}>I'm a Map</Text>
-        </View>
+        <MapView
+            provider={PROVIDER_GOOGLE}
+            style={styles.map}
+            initialRegion={{
+                latitude: 37.78825,
+                longitude: -122.4324,
+                latitudeDelta: 0.015,
+                longitudeDelta: 0.0121,
+            }}
+            >
+        </MapView>
     )
 };
 
 export default HomeMap;
 
 const styles = StyleSheet.create({
-    container: {
-        height: "42%",
-        backgroundColor:  "#a0abff",
-        justifyContent: "center",
-        alignItems: "center",
+    map: {
+        width: "100%",
+        height: "100%"
     }
 });
