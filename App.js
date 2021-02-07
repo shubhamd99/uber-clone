@@ -7,10 +7,13 @@
  */
 
 import 'react-native-gesture-handler';
+import { enableScreens } from 'react-native-screens';
 import React, { useEffect } from "react";
 import { StatusBar, PermissionsAndroid, Platform } from "react-native";
 import Geolocation from "@react-native-community/geolocation";
 import RootNavigator from './src/Navigation/Root';
+
+enableScreens();
 
 // If you need to have geolocation API aligned with the browser (cross-platform apps),
 // or want to support backward compatibility
