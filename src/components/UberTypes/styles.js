@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     bottomContainer: {
-        height: 140,
+        height: 145,
         backgroundColor: Colors.white,
         paddingBottom: 15,
     }
