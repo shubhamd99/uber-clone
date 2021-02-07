@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native';
-import HomeMap from "../../components/HomeMap";
+import RouteMap from '../../components/RouteMap';
 import UberTypes from '../../components/UberTypes';
 import styles from './styles';
 
@@ -8,7 +8,7 @@ const TripsScreen = () => {
     return (
         <View>
             <View style={styles.mapContainer}>
-                <HomeMap />
+                <RouteMap />
             </View>
             <View style={styles.bottomContainer}>
                 <UberTypes />

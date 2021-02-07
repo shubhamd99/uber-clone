@@ -5,7 +5,9 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Colors from '../../constants/Colors';
 
-const GOOGLE_API_KEY = "YOUR_API_KEY"
+import Env from "../../constants/Env";
+
+const GOOGLE_API_KEY = Env.GOOGLE_MAPS_APIKEY;
 
 const DestinationScreen = () => {
 
