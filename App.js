@@ -6,12 +6,11 @@
  * @flow strict-local
  */
 
+import 'react-native-gesture-handler';
 import React, { useEffect } from "react";
 import { StatusBar, PermissionsAndroid, Platform } from "react-native";
-import HomeScreen from "./src/screens/HomeScreen";
-import TripsScreen from "./src/screens/TripsScreen";
-import DestinationScreen from "./src/screens/DestinationScreen";
 import Geolocation from "@react-native-community/geolocation";
+import RootNavigator from './src/Navigation/Root';
 
 // If you need to have geolocation API aligned with the browser (cross-platform apps),
 // or want to support backward compatibility
@@ -55,9 +54,7 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <HomeScreen />
-      {/* <DestinationScreen /> */}
-      {/* <TripsScreen /> */}
+      <RootNavigator />
     </>
   );
 };

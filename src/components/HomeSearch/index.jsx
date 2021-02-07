@@ -1,6 +1,7 @@
 import React from 'react'
-import { ScrollView, Text, View } from 'react-native'
+import { ScrollView, Text, View, TouchableWithoutFeedback } from 'react-native'
 import styles from './styles';
+import { useNavigation } from "@react-navigation/native";
 
 import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -9,19 +10,28 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import Colors from '../../constants/Colors';
 
 const HomeSearch = () => {
+
+    const navigation = useNavigation();
+
+    const goToSearch = () => {
+        navigation.navigate("DestinationSearch");
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.flexCenter}>
                 <View style={styles.horizontalClip} />
             </View>
-            <View style={styles.inputBox}>
-                <Text style={styles.inputText}>Where To?</Text>
-                <View style={styles.timeContainer}>
-                    <AntDesign name="clockcircle" size={20} color={Colors.darkGrey} />
-                    <Text>Now</Text>
-                    <MaterialIcons name="keyboard-arrow-down" size={16} />
+            <TouchableWithoutFeedback onPress={goToSearch}>
+                <View style={styles.inputBox}>
+                    <Text style={styles.inputText}>Where To?</Text>
+                    <View style={styles.timeContainer}>
+                        <AntDesign name="clockcircle" size={20} color={Colors.darkGrey} />
+                        <Text>Now</Text>
+                        <MaterialIcons name="keyboard-arrow-down" size={16} />
+                    </View>
                 </View>
-            </View>
+            </TouchableWithoutFeedback>
 
             <ScrollView>
                 <View>

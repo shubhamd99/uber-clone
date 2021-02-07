@@ -5,6 +5,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Colors from '../../constants/Colors';
 import PlaceRow from './PlaceRow';
+import { useNavigation } from "@react-navigation/native";
 
 import Env from "../../constants/Env";
 
@@ -22,12 +23,15 @@ const GOOGLE_API_KEY = Env.GOOGLE_MAPS_APIKEY;
 
 const DestinationScreen = () => {
 
+    const navigation = useNavigation();
+
     const [originPlace, setOriginPlace] = useState(null);
     const [destinationPlace, setDestinationPlace] = useState(null);
 
     useEffect(() => {
+        // When user enter both Origin and Destination address, we will redirect him to the Trips Screen
         if (originPlace && destinationPlace) {
-            console.log("redirect to result..")
+            navigation.navigate("TripsScreen");
         }
     }, [originPlace, destinationPlace]);
 
@@ -64,7 +68,7 @@ const DestinationScreen = () => {
                         }}
                         renderRow={(data) => <PlaceRow data={data} />}
                         renderDescription={(data) => data.description || data.vicinity}
-                        predefinedPlaces={[workPlace, homePlace]}
+                        predefinedPlaces={[homePlace, workPlace]}
                     />
                     <GooglePlacesAutocomplete
                         enablePoweredByContainer={false}
@@ -89,7 +93,7 @@ const DestinationScreen = () => {
                         }}
                         renderRow={(data) => <PlaceRow data={data} />}
                         renderDescription={(data) => data.description || data.vicinity}
-                        predefinedPlaces={[workPlace, homePlace]}
+                        predefinedPlaces={[homePlace, workPlace]}
                     />
                 </View>
                 <View style={styles.sideContainer}>
