@@ -8,6 +8,16 @@ import PlaceRow from './PlaceRow';
 
 import Env from "../../constants/Env";
 
+const homePlace = {
+    description: "Home",
+    geometry: { location: { lat: 48.8152937, lng: 2.4597668 } },
+};
+
+const workPlace = {
+    description: "Work",
+    geometry: { location: { lat: 48.8496818, lng: 2.4940881 } },
+};
+
 const GOOGLE_API_KEY = Env.GOOGLE_MAPS_APIKEY;
 
 const DestinationScreen = () => {
@@ -32,6 +42,8 @@ const DestinationScreen = () => {
                 <View style={styles.flexRow}>
                     <GooglePlacesAutocomplete
                         enablePoweredByContainer={false}
+                        currentLocation={true}
+                        currentLocationLabel={"Current Location"}
                         styles={{
                             textInput: styles.textInput,
                             listView: { position: "absolute", top: 130 },
@@ -51,9 +63,13 @@ const DestinationScreen = () => {
                             language: 'en',
                         }}
                         renderRow={(data) => <PlaceRow data={data} />}
+                        renderDescription={(data) => data.description || data.vicinity}
+                        predefinedPlaces={[workPlace, homePlace]}
                     />
                     <GooglePlacesAutocomplete
                         enablePoweredByContainer={false}
+                        currentLocation={true}
+                        currentLocationLabel={"Current Location"}
                         styles={{
                             textInput: styles.textInput,
                             listView: { position: "absolute", top: 80 },
@@ -72,6 +88,8 @@ const DestinationScreen = () => {
                             language: 'en',
                         }}
                         renderRow={(data) => <PlaceRow data={data} />}
+                        renderDescription={(data) => data.description || data.vicinity}
+                        predefinedPlaces={[workPlace, homePlace]}
                     />
                 </View>
                 <View style={styles.sideContainer}>
