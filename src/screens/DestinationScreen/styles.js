@@ -11,17 +11,14 @@ const styles = StyleSheet.create({
     },
     flexRow: {
         flexDirection: "column",
-        width: "80%"
+        width: "90%",
+        paddingLeft: 30
     },
     sideContainer: {
         justifyContent: "flex-end",
         alignItems: "center",
         width: "10%",
-        // backgroundColor: "red",
         paddingBottom: 15
-    },
-    verticalLineContainer: {
-        marginRight: 35,
     },
     circle: {
         position: "absolute",
@@ -54,6 +51,20 @@ const styles = StyleSheet.create({
         padding: 10,
         backgroundColor: Colors.lightGrey,
         marginVertical: 5
+    },
+    row: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginVertical: 10,
+    },
+    iconContainer: {
+        backgroundColor: "#A4A4A4",
+        padding: 5,
+        borderRadius: 50,
+        marginRight: 15
+    },
+    locationText: {
+        color: Colors.darkGrey
     }
 });
 

@@ -4,6 +4,7 @@ import styles from './styles';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Colors from '../../constants/Colors';
+import PlaceRow from './PlaceRow';
 
 import Env from "../../constants/Env";
 
@@ -23,21 +24,21 @@ const DestinationScreen = () => {
     return (
         <SafeAreaView>
             <View style={styles.container}>
-                <View style={styles.verticalLineContainer}>
+                <View>
                     <View style={styles.circle} />
                     <View style={styles.verticalLine} />
                     <View style={styles.rectangle} />
                 </View>
                 <View style={styles.flexRow}>
                     <GooglePlacesAutocomplete
+                        enablePoweredByContainer={false}
                         styles={{
-                           
                             textInput: styles.textInput,
-                            listView: { position: "absolute", top: 50 },
+                            listView: { position: "absolute", top: 130 },
                             container: {
                                 flex: 0,
                                 zIndex: 2,
-                            }
+                            },
                         }}
                         placeholder='Where From'
                         fetchDetails={true}
@@ -49,11 +50,13 @@ const DestinationScreen = () => {
                             key: GOOGLE_API_KEY,
                             language: 'en',
                         }}
+                        renderRow={(data) => <PlaceRow data={data} />}
                     />
                     <GooglePlacesAutocomplete
+                        enablePoweredByContainer={false}
                         styles={{
                             textInput: styles.textInput,
-                            listView: { position: "absolute", top: 50 },
+                            listView: { position: "absolute", top: 80 },
                             container: {
                                 flex: 0,
                             }
@@ -68,6 +71,7 @@ const DestinationScreen = () => {
                             key: GOOGLE_API_KEY,
                             language: 'en',
                         }}
+                        renderRow={(data) => <PlaceRow data={data} />}
                     />
                 </View>
                 <View style={styles.sideContainer}>
