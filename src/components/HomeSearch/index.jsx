@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { ScrollView, Text, View } from 'react-native'
 import styles from './styles';
 
 import AntDesign from "react-native-vector-icons/AntDesign";
@@ -23,32 +23,36 @@ const HomeSearch = () => {
                 </View>
             </View>
 
-            <View style={styles.row}>
-                <View style={styles.iconContainer}>
-                    <AntDesign name="clockcircle" size={20} color={Colors.background} />
-                </View>
-                <Text style={styles.destinationText}>Outer Ring Road, Bengaluru</Text>
-            </View>
-
-            <View style={styles.row}>
-                <View style={[styles.iconContainer, { backgroundColor: Colors.lightBlue }]}>
-                    <Entypo name="home" size={20} color={Colors.background} />
-                </View>
-                <Text style={styles.destinationText}>IBD Royal City, Jabalpur</Text>
-            </View>
-
-            <View style={styles.lastRow}>
-                <View style={styles.displayRow}>
-                    <View>
-                        <MaterialCommunityIcons name="star-four-points" size={25} color={"#FFA600"} />
+            <ScrollView>
+                <View>
+                    <View style={styles.row}>
+                        <View style={styles.iconContainer}>
+                            <AntDesign name="clockcircle" size={20} color={Colors.background} />
+                        </View>
+                        <Text style={styles.destinationText}>Outer Ring Road, Bengaluru</Text>
                     </View>
-                    <Text style={styles.pointsText}>302 pts</Text>
+
+                    <View style={styles.row}>
+                        <View style={[styles.iconContainer, { backgroundColor: Colors.lightBlue }]}>
+                            <Entypo name="home" size={20} color={Colors.background} />
+                        </View>
+                        <Text style={styles.destinationText}>IBD Royal City, Jabalpur</Text>
+                    </View>
+
+                    <View style={styles.lastRow}>
+                        <View style={styles.displayRow}>
+                            <View>
+                                <MaterialCommunityIcons name="star-four-points" size={25} color={"#FFA600"} />
+                            </View>
+                            <Text style={styles.pointsText}>302 pts</Text>
+                        </View>
+                        <View style={styles.displayRow}>
+                            <Text style={styles.rewardsText}>Rewards Hub</Text>
+                            <MaterialIcons name="arrow-forward-ios" size={15} color={"#BBBAB9"} />
+                        </View>
+                    </View>
                 </View>
-                <View style={styles.displayRow}>
-                    <Text style={styles.rewardsText}>Rewards Hub</Text>
-                    <MaterialIcons name="arrow-forward-ios" size={15} color={"#BBBAB9"} />
-                </View>
-            </View>
+            </ScrollView>
             
         </View>
     )

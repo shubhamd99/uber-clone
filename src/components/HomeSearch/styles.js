@@ -3,7 +3,9 @@ import Colors from "../../constants/Colors";
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         paddingTop: 10,
+        paddingBottom: 20,
     },
     flexCenter: {
         alignItems: "center",
