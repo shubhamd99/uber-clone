@@ -3,8 +3,12 @@ import { View, Text } from 'react-native';
 import RouteMap from '../../components/RouteMap';
 import UberTypes from '../../components/UberTypes';
 import styles from './styles';
+import { useRoute } from "@react-navigation/native";
 
 const TripsScreen = () => {
+    const route = useRoute();
+    console.log("route", route.params);
+
     return (
         <View>
             <View style={styles.mapContainer}>

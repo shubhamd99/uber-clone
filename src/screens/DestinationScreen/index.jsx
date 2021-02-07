@@ -31,7 +31,10 @@ const DestinationScreen = () => {
     useEffect(() => {
         // When user enter both Origin and Destination address, we will redirect him to the Trips Screen
         if (originPlace && destinationPlace) {
-            navigation.navigate("TripsScreen");
+            navigation.navigate("TripsScreen", { 
+                originPlace,
+                destinationPlace,
+             });
         }
     }, [originPlace, destinationPlace]);
 
