@@ -6,10 +6,18 @@ import Colors from '../../constants/Colors';
 
 import Env from "../../constants/Env";
 
-const RouteMap = () => {
+const RouteMap = ({ origin, destination }) => {
 
-    const origin = { latitude: 28.450527, longitude: -16.263045 };
-    const destination = { latitude: 28.460127, longitude: -16.269045 };
+    // console.log(origin.details.geometry.location, destination.details.geometry.location);
+
+    const originLoc = origin ? {
+            latitude: origin.details.geometry.location.lat,
+            longitude: origin.details.geometry.location.lng,
+        } : { latitude: 28.450527, longitude: -16.263045 };
+    const destinationLoc = destination ? {
+            latitude: destination.details.geometry.location.lat,
+            longitude: destination.details.geometry.location.lng,
+        } : { latitude: 28.460127, longitude: -16.269045 };
 
     return (
         <MapView
@@ -17,21 +25,21 @@ const RouteMap = () => {
             style={styles.map}
             showsUserLocation
             initialRegion={{
-                latitude: 28.460127,
-                longitude: -16.263045,
+                latitude: originLoc.latitude,
+                longitude: originLoc.longitude,
                 latitudeDelta: 0.0222,
                 longitudeDelta: 0.0121,
             }}
             >
                 <MapViewDirections
-                    origin={origin}
-                    destination={destination}
+                    origin={originLoc}
+                    destination={destinationLoc}
                     strokeWidth={3}
                     strokeColor={Colors.black}
                     apikey={Env.GOOGLE_MAPS_APIKEY}
                 />
                 <Marker
-                    coordinate={origin}
+                    coordinate={originLoc}
                     title={"Origin"}
                 >
                     <View style={styles.markerRound}>
@@ -39,7 +47,7 @@ const RouteMap = () => {
                     </View>
                 </Marker>
                 <Marker
-                    coordinate={destination}
+                    coordinate={destinationLoc}
                     title={"Destination"}
                 >
                     <View style={styles.markerRectangle}>

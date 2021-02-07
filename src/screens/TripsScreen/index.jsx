@@ -10,7 +10,7 @@ import Colors from '../../constants/Colors';
 
 const TripsScreen = () => {
     const route = useRoute();
-    console.log("route", route.params);
+    const { originPlace, destinationPlace } = route.params;
 
     const navigation = useNavigation();
 
@@ -24,7 +24,7 @@ const TripsScreen = () => {
                 <Ionicons name="arrow-back" size={30} color={Colors.blackGrey}/>
             </Pressable>
             <View style={styles.mapContainer}>
-                <RouteMap />
+                <RouteMap origin={originPlace} destination={destinationPlace} />
             </View>
             <View style={styles.bottomContainer}>
                 <UberTypes />
